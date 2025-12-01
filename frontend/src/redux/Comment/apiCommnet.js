@@ -10,7 +10,8 @@ import {
   deleteCommentSuccess,
 } from "./commentSlice";
 
-const API_COMMENT = "http://localhost:8000/comment";
+// const API_COMMENT = "http://localhost:8000/comment";
+const API_COMMENT = "https://bookstore-backend-vovp.onrender.com/comment";
 
 // 🔑 Hàm tiện ích lấy header có token
 

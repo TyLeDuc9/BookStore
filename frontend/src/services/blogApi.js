@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-const API_BLOG = "http://localhost:8000/blog";
+// const API_BLOG = "http://localhost:8000/blog";
+const API_BLOG = "https://bookstore-backend-vovp.onrender.com/blog";
 export const getBlogById = async (id) => {
   try {
     const res = await axios.get(`${API_BLOG}/${id}`)

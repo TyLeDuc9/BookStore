@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-const API_RATING = "http://localhost:8000/rating";
+// const API_RATING = "http://localhost:8000/rating";
+const API_RATING = "https://bookstore-backend-vovp.onrender.com/rating";
 export const deleteRatingBook = async (id) => {
     const res = await axios.delete(`${API_RATING}/${id}`, {
         headers: { ...getAuthHeader(), }, 

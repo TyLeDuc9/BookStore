@@ -7,7 +7,8 @@ import {
   setDefaultStart, setDefaultSuccess, setDefaultFailed
 } from "./shippingAddressSlice";
 
-const API_SHIPPINGADDRESS = "http://localhost:8000/shipping-address";
+// const API_SHIPPINGADDRESS = "http://localhost:8000/shipping-address";
+const API_SHIPPINGADDRESS = "https://bookstore-backend-vovp.onrender.com/shipping-address";
 
 export const fetchAddresses = (userId) => async (dispatch) => {
   try {

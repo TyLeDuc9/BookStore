@@ -7,7 +7,8 @@ import {
 } from "./favoriteSlice";
 import axios from "axios";
 
-const API_FAVORITE = "http://localhost:8000/favorite";
+// const API_FAVORITE = "http://localhost:8000/favorite";
+const API_FAVORITE = "https://bookstore-backend-vovp.onrender.com/favorite";
 
 // 📘 Lấy danh sách yêu thích theo user
 export const fetchFavoritesByUser = (userId) => async (dispatch) => {

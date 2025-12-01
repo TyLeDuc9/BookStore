@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-const API_BOOK_DETAIL = "http://localhost:8000/book-detail"
+// const API_BOOK_DETAIL = "http://localhost:8000/book-detail"
+const API_BOOK_DETAIL = "https://bookstore-backend-vovp.onrender.com/book-detail";
 export const updateBookDetail = async (id, data) => {
     try {
         const res = await axios.put(

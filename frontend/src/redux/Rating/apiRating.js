@@ -7,7 +7,8 @@ import {
   removeRating,
 } from "./ratingSlice";
 
-const API_RATING = "http://localhost:8000/rating";
+// const API_RATING = "http://localhost:8000/rating";
+const API_RATING = "https://bookstore-backend-vovp.onrender.com/rating";
 
 // 🟢 Lấy tất cả rating theo book
 export const fetchRatingsByBook = (bookId) => async (dispatch) => {

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 
-const API_PUBLISHER = "http://localhost:8000/publisher";
+// const API_PUBLISHER = "http://localhost:8000/publisher";
+const API_PUBLISHER = "https://bookstore-backend-vovp.onrender.com/publisher";
 
 export const updatePublisher = async (id, data) => {
   try {
