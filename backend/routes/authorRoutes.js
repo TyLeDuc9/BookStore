@@ -1,0 +1,10 @@
+const express = require('express')
+const router = express.Router()
+const { verifyToken, verifyRole } = require('../middlewares/authMiddleware')
+const authorController = require('../controllers/authorController')
+router.get('/all', authorController.getAllAuthor)
+router.get('/:id', authorController.getAuthorById)
+router.post('/',verifyToken,verifyRole(['admin', 'employee']), authorController.createAuthor)
+router.put('/:id',verifyToken,verifyRole(['admin', 'employee']), authorController.updateAuthor)
+router.delete('/:id', verifyToken, verifyRole(['admin']), authorController.deleteAuthor)
+module.exports = router
