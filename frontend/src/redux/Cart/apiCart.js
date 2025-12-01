@@ -10,7 +10,7 @@ import {
 } from "./cartSlice";
 
 // const API_CART = "http://localhost:8000/cart";
-const API_CART = "https://bookstore-backend-vovp.onrender.com/cart";
+const API_CART = "https://bookstore-backend-wy3q.onrender.com/cart";
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("token");

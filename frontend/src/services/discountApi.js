@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 
 // const API_DISCOUNT = "http://localhost:8000/discount";
-const API_DISCOUNT = "https://bookstore-backend-vovp.onrender.com/discount";
+const API_DISCOUNT = "https://bookstore-backend-wy3q.onrender.com/discount";
 
 // ✅ Lấy tất cả discount
 export const getAllDiscount = async () => {

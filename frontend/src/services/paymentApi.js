@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader"; // nếu có auth
 
 // const API_PAYMENT = "http://localhost:8000/payment";
-const API_PAYMENT = "https://bookstore-backend-vovp.onrender.com/payment";
+const API_PAYMENT = "https://bookstore-backend-wy3q.onrender.com/payment";
 
 /**
  * Tạo payment VNPay

@@ -7,8 +7,8 @@ import {
 import { getAuthHeader } from "../../utils/authHeader";
 // const API_AUTH = "http://localhost:8000/auth"
 // const API_USER = "http://localhost:8000/user"
-const API_AUTH = "https://bookstore-backend-vovp.onrender.com/auth"
-const API_USER = "https://bookstore-backend-vovp.onrender.com/user"
+const API_AUTH = "https://bookstore-backend-wy3q.onrender.com/auth"
+const API_USER = "https://bookstore-backend-wy3q.onrender.com/user"
 export const changePassword = async (token, userData) => {
   try {
     const res = await axios.put(`${API_USER}/change-password`, userData, {

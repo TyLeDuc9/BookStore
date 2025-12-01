@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 
 // const API_BOOK = "http://localhost:8000/book";
-const API_BOOK = "https://bookstore-backend-vovp.onrender.com/book";
+const API_BOOK = "https://bookstore-backend-wy3q.onrender.com/book";
 export const getBookById = async (id) => {
   try {
     const res = await axios.get(`${API_BOOK}/${id}`, {

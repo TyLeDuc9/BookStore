@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 // const API_USER = "http://localhost:8000/user";
-const API_USER = "https://bookstore-backend-vovp.onrender.com/user";
+const API_USER = "https://bookstore-backend-wy3q.onrender.com/user";
 export const resetPassword = async (token, password, confirmPassword) => {
   try {
     const res = await axios.post(`${API_USER}/reset-password/${token}`, { password, confirmPassword });

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 // const API_SHIPPING_ADDRESS = "http://localhost:8000/shipping-address";
-const API_SHIPPING_ADDRESS = "https://bookstore-backend-vovp.onrender.com/shipping-address";
+const API_SHIPPING_ADDRESS = "https://bookstore-backend-wy3q.onrender.com/shipping-address";
 export const getAddressById = async (id) => {
     try {
         const res = await axios.get(`${API_SHIPPING_ADDRESS}/by/${id}`)

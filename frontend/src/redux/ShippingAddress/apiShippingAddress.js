@@ -8,7 +8,7 @@ import {
 } from "./shippingAddressSlice";
 
 // const API_SHIPPINGADDRESS = "http://localhost:8000/shipping-address";
-const API_SHIPPINGADDRESS = "https://bookstore-backend-vovp.onrender.com/shipping-address";
+const API_SHIPPINGADDRESS = "https://bookstore-backend-wy3q.onrender.com/shipping-address";
 
 export const fetchAddresses = (userId) => async (dispatch) => {
   try {

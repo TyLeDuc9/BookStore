@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
 
 // const API_FAVORITE = "http://localhost:8000/favorite";
-const API_FAVORITE = "https://bookstore-backend-vovp.onrender.com/favorite";
+const API_FAVORITE = "https://bookstore-backend-wy3q.onrender.com/favorite";
 export const deleteFavoriteBook = async (id) => {
   try {
     const res = await axios.delete(`${API_FAVORITE}/${id}`,{
