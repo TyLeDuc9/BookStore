@@ -9,7 +9,8 @@ import {
   updateComment,
   deleteComment,
 } from "../../redux/Comment/apiCommnet";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const Comments = ({ bookId }) => {
   const dispatch = useDispatch();
   const { comments = [], loading } = useSelector((state) => state.comment);
@@ -32,7 +33,7 @@ export const Comments = ({ bookId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!currentUser) return alert("Vui lòng đăng nhập để bình luận!");
+    if (!currentUser) return toast.error("Vui lòng đăng nhập để bình luận!");
     if (!text.trim()) return;
 
     if (editingId) {
@@ -91,7 +92,7 @@ export const Comments = ({ bookId }) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder={editingId ? "Chỉnh sửa bình luận của bạn..." : "Nhập nội dung bình luận..."}
-          className="w-full lg:text-base text-sm   border border-gray-300 rounded-xl p-4 
+          className="w-full text-base   border border-gray-300 rounded-xl p-4 
           text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#639eae] focus:border-transparent resize-none transition-all"
         />
 
