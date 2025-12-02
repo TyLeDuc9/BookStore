@@ -28,27 +28,27 @@ const PrevArrow = ({ onClick }) => (
 );
 
 // 👉 Slider settings
-const sliderSettings = {
+const settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 3, // iPad, Laptop, Desktop
+  slidesToShow: 3,
   slidesToScroll: 1,
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
-
+  autoplay: false,
+  autoplaySpeed: 3000,
+  arrows: false,
   responsive: [
     {
-      breakpoint: 600, // nhỏ hơn 600px → mobile
+      breakpoint: 1024, // màn hình nhỏ hơn 1024px
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 1024, // nhỏ hơn 1024px → tablet
+      breakpoint: 767, // màn hình nhỏ hơn 768px (tablet)
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
@@ -76,7 +76,7 @@ export const BlogBook = () => {
 
   return (
     <div className="relative w-[90%] mx-auto lg:my-12 sm:my-12 my-6">
-      <Slider {...sliderSettings}>
+      <Slider {...settings}>
         {blogs.map((item) => (
           <div key={item._id} className="px-4">
             <div className="bg-gray-100 rounded-lg overflow-hidden flex flex-col lg:h-80 sm:h-80 h-48">
