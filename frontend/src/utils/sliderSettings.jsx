@@ -32,20 +32,23 @@ export const sliderSettings = {
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
 
+  mobileFirst: true, // ⭐ FIX QUAN TRỌNG
+
   responsive: [
     {
-      breakpoint: 1024, // Tablet
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 600, // Mobile (tương thích mọi điện thoại)
+      breakpoint: 600, // nhỏ hơn 600px → mobile
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
+    {
+      breakpoint: 1024, // nhỏ hơn 1024px → tablet
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
   ],
 };
+
