@@ -43,7 +43,7 @@ export const sliderSettings = {
     {
       breakpoint: 600, // Mobile (tương thích mọi điện thoại)
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
