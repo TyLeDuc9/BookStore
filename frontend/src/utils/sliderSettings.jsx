@@ -25,7 +25,7 @@ export const sliderSettings = {
   dots: false,
   infinite: false,
   speed: 1000,
-  slidesToShow: 5,     // Laptop / Desktop
+  slidesToShow: 5,
   slidesToScroll: 1,
   autoplay: false,
   arrows: true,
@@ -34,16 +34,16 @@ export const sliderSettings = {
 
   responsive: [
     {
-      breakpoint: 1024, // iPad / Tablet
+      breakpoint: 1024, // Tablet
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 767, // Mobile
+      breakpoint: 600, // Mobile (tương thích mọi điện thoại)
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
