@@ -41,14 +41,14 @@ const settings = {
     {
       breakpoint: 1024, // màn hình nhỏ hơn 1024px
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
     {
       breakpoint: 767, // màn hình nhỏ hơn 768px (tablet)
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
