@@ -36,12 +36,20 @@ const sliderSettings = {
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+
   responsive: [
     {
-      breakpoint: 768, // Mobile (≤ 768px)
+      breakpoint: 600, // nhỏ hơn 600px → mobile
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 1024, // nhỏ hơn 1024px → tablet
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
       },
     },
   ],
