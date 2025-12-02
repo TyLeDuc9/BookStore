@@ -25,7 +25,7 @@ export const sliderSettings = {
   dots: false,
   infinite: false,
   speed: 1000,
-  slidesToShow: 5,
+  slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: false,
   arrows: true,
