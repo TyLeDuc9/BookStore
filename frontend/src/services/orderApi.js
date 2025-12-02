@@ -15,7 +15,7 @@ export const getOrderDetails = async ({ orderId }) => {
     throw err.response?.data || err;
   }
 }
-const API_ORDER = "https://bookstore-backend-wy3q.onrender.com/order";
+const API_ORDER = `${API}/order`;
 
 export const getRevenue = async ({ type = "day", page = 1, limit = 20, sort = "newest" }) => {
   try {
