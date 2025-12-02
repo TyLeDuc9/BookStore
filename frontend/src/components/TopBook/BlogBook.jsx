@@ -67,7 +67,7 @@ export const BlogBook = () => {
     return <p className="text-center text-red-500 mt-10">Error: {error.message}</p>;
 
   return (
-    <div className="relative w-[90%] mx-auto lg:my-12 sm:my-12 my-6">
+    <div className="relative w-full mx-auto lg:my-12 sm:my-12 my-6">
       <Slider {...sliderSettings}>
         {blogs.map((item) => (
           <div key={item._id} className="px-4">
