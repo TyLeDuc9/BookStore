@@ -97,7 +97,7 @@ export const FormAddressShipping = () => {
               required
               placeholder={f.placeholder}
               className="w-full border border-gray-300 rounded-lg 
-              px-3 py-2 lg:text-base text-sm focus:outline-none focus:border-blue-500 placeholder-gray-400"
+              px-3 py-2 text-base focus:outline-none focus:border-blue-500 placeholder-gray-400"
             />
           </div>
         ))}

@@ -61,7 +61,7 @@ export const FormUserInformation = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Nhập họ và tên"
-            className="w-3/4 border border-gray-300 px-4 py-2 rounded-lg lg:text-base text-sm
+            className="w-3/4 border border-gray-300 px-4 py-2 rounded-lg text-base
               focus:outline-none focus:ring-2 focus:ring-[#3a606e]"
           />
         </div>
@@ -76,7 +76,7 @@ export const FormUserInformation = () => {
             onChange={handleChange}
             disabled // ✅ không cho sửa email đăng nhập
             className="w-3/4 border border-gray-300 px-4 py-2 rounded-lg 
-              bg-gray-100 cursor-not-allowed lg:text-base text-sm"
+              bg-gray-100 cursor-not-allowed text-base"
           />
         </div>
 
@@ -90,7 +90,7 @@ export const FormUserInformation = () => {
             onChange={handleChange}
             placeholder="Nhập số điện thoại"
             className="w-3/4 border border-gray-300 px-4 py-2 rounded-lg 
-              focus:outline-none focus:ring-2 focus:ring-[#3a606e] lg:text-base text-sm"
+              focus:outline-none focus:ring-2 focus:ring-[#3a606e] text-base"
           />
         </div>
 
@@ -106,7 +106,7 @@ export const FormUserInformation = () => {
                   value={g}
                   checked={formData.gender === g}
                   onChange={handleChange}
-                  className="text-[#3a606e] lg:text-base text-sm"
+                  className="text-[#3a606e] text-base"
                 />
                 {g === "male" ? "Nam" : g === "female" ? "Nữ" : "Khác"}
               </label>
@@ -123,7 +123,7 @@ export const FormUserInformation = () => {
             value={formData.birthday}
             onChange={handleChange}
             className="w-3/4 border border-gray-300 px-4 py-2 rounded-lg 
-              focus:outline-none focus:ring-2 focus:ring-[#3a606e] lg:text-base text-sm"
+              focus:outline-none focus:ring-2 focus:ring-[#3a606e] text-base"
           />
         </div>
 

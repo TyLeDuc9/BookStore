@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-// const API_AUTHOR = "http://localhost:8000/author";
-const API_AUTHOR = "https://bookstore-backend-wy3q.onrender.com/author";
+import { API } from "../config/api";
+const API_AUTHOR = `${API}/author`;
 export const createAuthor = async (data) => {
   try {
     const res = await axios.post(`${API_AUTHOR}`, data, {

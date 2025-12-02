@@ -1,8 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-
-// const API_PUBLISHER = "http://localhost:8000/publisher";
-const API_PUBLISHER = "https://bookstore-backend-wy3q.onrender.com/publisher";
+import { API } from "../config/api";
+const API_PUBLISHER = `${API}/publisher`;
 
 export const updatePublisher = async (id, data) => {
   try {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getAuthHeader } from "../utils/authHeader";
-// const API_CART = "http://localhost:8000/cart";
-const API_CART = "https://bookstore-backend-wy3q.onrender.com/cart";
+import { API } from "../config/api";
+const API_CART = `${API}/cart`;
 export const deleteCartId = async (id) => {
     try {
         const res = await axios.delete(`${API_CART}/${id}`, {

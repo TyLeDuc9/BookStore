@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { useBanners } from '../../hooks/useBanners';
 import { useNavigate } from 'react-router-dom';
-
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const Banner = () => {
   const { banners, loading, err } = useBanners();
   const navigate = useNavigate();
   const [isDragging, setIsDragging] = useState(false);
 
-  if (loading) return <p>Đang tải...</p>;
+  const { setComponentsLoading } = useLoading();
+
+  useEffect(() => {
+    setComponentsLoading(loading);
+  }, [loading]);
+  if (loading) return <ComponentLoading />;
   if (err) return <p>Lỗi: {err.message}</p>;
 
   const settings = {

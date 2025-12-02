@@ -97,7 +97,7 @@ export const BookDetailInformation = ({ book }) => {
               <button
                 key={index}
                 onClick={() => handleSelectVolume(d)}
-                className={`px-2 py-1 lg:text-sm text-xs rounded border border-cyan-500 cursor-pointer
+                className={`px-1 py-2 lg:px-2 lg:py-1 lg:text-sm text-xs rounded border border-cyan-500 cursor-pointer
             ${selectedDetail?._id === d._id ? "text-rose-600" : ""}`}
               >
                 Tập {d.volume}
@@ -194,8 +194,8 @@ export const BookDetailInformation = ({ book }) => {
 
         {/* Thông tin sản phẩm */}
         <div>
-          <span className="font-medium lg:text-base text-sm">Thông tin sản phẩm</span>
-          <ul className="space-y-1 lg:text-base text-sm my-2 font-stretch-50%">
+          <span className="font-medium text-base">Thông tin sản phẩm</span>
+          <ul className="space-y-1 text-base my-2 font-stretch-50%">
             <li>
               <span>Mã ISBN:</span> {selectedDetail?.isbn}
             </li>

@@ -44,7 +44,7 @@ export const FormLogin = () => {
         <input
           type="email"
           placeholder="Email"
-          className="border lg:px-4 lg:py-2 py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none"
+          className="border lg:px-4 lg:py-2 py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -54,7 +54,7 @@ export const FormLogin = () => {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Mật khẩu"
-            className="w-full border lg:px-4 lg:py-2 py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none "
+            className="w-full border lg:px-4 lg:py-2 py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none "
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

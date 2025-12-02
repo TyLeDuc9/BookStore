@@ -25,22 +25,23 @@ export const sliderSettings = {
   dots: false,
   infinite: false,
   speed: 1000,
-  slidesToShow: 5,
-  slidesToScroll: 4,
+  slidesToShow: 5,     // Laptop / Desktop
+  slidesToScroll: 1,
   autoplay: false,
   arrows: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+
   responsive: [
     {
-      breakpoint: 1024, // màn hình nhỏ hơn 1024px
+      breakpoint: 1024, // iPad / Tablet
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 767, // màn hình nhỏ hơn 768px (tablet)
+      breakpoint: 767, // Mobile
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,

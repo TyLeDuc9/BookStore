@@ -10,9 +10,8 @@ export const Header = () => {
 
   return (
     <header className="bg-[#364e57] relative">
-      <section className="w-[85%] mx-auto text-white flex justify-between items-center gap-4 py-8">
+      <section className="w-[85%] mx-auto text-white flex justify-between items-center lg:gap-4 gap-2 lg:py-8 py-6">
         <HeaderLogo />
-
         <div className="flex-1 lg:max-w-[600px] sm:max-w-[800px]">
           <HeaderSearch />
         </div>

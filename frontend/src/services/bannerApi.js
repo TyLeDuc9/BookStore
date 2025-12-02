@@ -1,8 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-
-// const API_BANNER = "http://localhost:8000/banner";
-const API_BANNER = "https://bookstore-backend-wy3q.onrender.com/banner";
+import { API } from "../config/api";
+const API_BANNER = `${API}/banner`;
 
 // 🟢 Lấy toàn bộ banner
 export const getBanners = async () => {

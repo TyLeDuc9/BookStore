@@ -1,6 +1,6 @@
 import axios from "axios";
-// const API_CATEGORY = "http://localhost:8000/category";
-const API_CATEGORY = "https://bookstore-backend-wy3q.onrender.com/category";
+import { API } from "../config/api";
+const API_CATEGORY =`${API}/category`;
 import { getAuthHeader } from "../utils/authHeader";
 
 export const getCategoryById = async (id) => {

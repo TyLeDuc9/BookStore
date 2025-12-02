@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 import {
   fetchFavoritesByUser,
   removeFromFavorite,
@@ -8,6 +10,7 @@ import {
 import { BookCard } from "../../components/BookCard/BookCard";
 export const FavoritePage = () => {
   const dispatch = useDispatch();
+  const { setComponentsLoading } = useLoading();
   const { favorites, loading, error } = useSelector((state) => state.favorite);
   const currentUser = useSelector((state) => state.auth.login.currentUser);
 
@@ -19,15 +22,18 @@ export const FavoritePage = () => {
       dispatch(fetchFavoritesByUser(userId));
     }
   }, [dispatch, currentUser]);
+  useEffect(() => {
+    setComponentsLoading(loading);
+  }, [loading]);
 
 
-  if (loading) return <p>Đang tải sách...</p>;
+  if (loading) return <ComponentLoading />;
   if (error) return <p>Lỗi: {error}</p>;
 
   const handleRemove = (bookDetailId) => {
     if (!currentUser) return;
-    const userId = currentUser?._id || currentUser?.id; 
-    dispatch(removeFromFavorite(userId, bookDetailId)); 
+    const userId = currentUser?._id || currentUser?.id;
+    dispatch(removeFromFavorite(userId, bookDetailId));
   };
 
   let content;

@@ -6,9 +6,8 @@ import {
   addOrUpdateRating,
   removeRating,
 } from "./ratingSlice";
-
-// const API_RATING = "http://localhost:8000/rating";
-const API_RATING = "https://bookstore-backend-wy3q.onrender.com/rating";
+import { API } from "../../config/api";
+const API_RATING =`${API}/rating`;
 
 // 🟢 Lấy tất cả rating theo book
 export const fetchRatingsByBook = (bookId) => async (dispatch) => {

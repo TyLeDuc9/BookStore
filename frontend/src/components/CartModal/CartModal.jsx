@@ -97,8 +97,8 @@ export const CartModal = ({ isOpen, onClose }) => {
                   min={1}
                   max={item.stock}
                   onChange={(e) => handleQuantityChange(item, Number(e.target.value))}
-                  className="lg:w-16 w-12 border border-gray-300 rounded-md 
-                  text-center focus:ring-2 lg:text-base text-xs focus:ring-[#639eae] focus:outline-none"
+                  className="lg:w-16 w-16 border border-gray-300 rounded-md 
+                  text-center focus:ring-2 text-base focus:ring-[#639eae] focus:outline-none"
                 />
 
                 {/* Thành tiền */}
@@ -106,7 +106,7 @@ export const CartModal = ({ isOpen, onClose }) => {
 
                 {/* Xóa */}
                 <button onClick={() => handleRemove(item)} className="hover:text-red-500 transition cursor-pointer">
-                  <AiOutlineDelete className="w-4 h-4 md:w-6 md:h-6 text-gray-500" />
+                  <AiOutlineDelete className="w-5 h-5 text-red-400 md:w-6 md:h-6" />
                 </button>
               </div>
             ))}

@@ -54,7 +54,7 @@ export const CartMini = ({ onClose }) => {
               Giỏ hàng của tôi ({cart.totalQuantity} sản phẩm)
             </span>
             <AiOutlineClose
-              className="lg:w-4 lg:h-4 w-3 font-bold h-3 text-white lg:mt-0 mt-0.5 cursor-pointer"
+              className="w-4 font-bold h-4 text-white lg:mt-0 mt-0.5 cursor-pointer"
               onClick={onClose}
             />
           </div>
@@ -64,11 +64,11 @@ export const CartMini = ({ onClose }) => {
             {cart.items.map((item, index) => (
               <ul key={index} className="flex items-center gap-2 py-2 border-b">
                 <Link to={`/san-pham/${item.bookId}/${item.slug}?volume=${item.volume || ''}`}>
-                  <div className="lg:w-24 lg:h-20 w-20 h-16 flex items-center justify-center rounded overflow-hidden">
+                  <div className="w-24 h-24 flex items-center justify-center rounded overflow-hidden bg-white p-2">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-contain"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                 </Link>
@@ -91,7 +91,7 @@ export const CartMini = ({ onClose }) => {
                 </li>
                 <li onClick={() => handleRemove(item)}>
                   <AiOutlineClose
-                    className="lg:w-4 lg:h-4 w-3 font-bold h-3 text-[#386572] cursor-pointer"
+                    className="w-4 font-bold h-4 text-[#386572] cursor-pointer"
 
                   />
                 </li>

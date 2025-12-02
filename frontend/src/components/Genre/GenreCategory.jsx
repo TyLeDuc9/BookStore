@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaBook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAllCategory } from "../../hooks/useAllCategory";
-
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const GenreCategory = ({ mobile = false }) => {
     const { allCategory, loading, err } = useAllCategory();
-
-    if (loading) return <p>Loading...</p>;
+    const { setComponentsLoading } = useLoading();
+    useEffect(() => {
+        setComponentsLoading(loading);
+    }, [loading]);
+    
+    if (loading) return <ComponentLoading />;
     if (err) return <p>Error: {err}</p>;
 
     return (
@@ -22,8 +27,8 @@ export const GenreCategory = ({ mobile = false }) => {
                 {allCategory.map((genre) => (
                     <li
                         key={genre._id}
-                        className={mobile ? 
-                            "flex gap-2 px-4 py-1.5 uppercase" : 
+                        className={mobile ?
+                            "flex gap-2 px-4 py-1.5 uppercase" :
                             "flex items-center gap-2 px-3 py-2 uppercase text-gray-800 text-sm font-medium hover:text-red-500 border-b last:border-none"}
                     >
                         <FaBook />

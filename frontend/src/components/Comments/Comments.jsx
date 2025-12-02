@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Title } from "../Title/Title";
 import { useDispatch, useSelector } from "react-redux";
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 import {
   fetchCommentsByBook,
   createComment,
@@ -12,7 +14,7 @@ export const Comments = ({ bookId }) => {
   const dispatch = useDispatch();
   const { comments = [], loading } = useSelector((state) => state.comment);
   const currentUser = useSelector((state) => state.auth.login.currentUser);
-
+  const { setComponentsLoading } = useLoading();
   const [text, setText] = useState("");
   const [isAnonymous, setIsAnonymous] = useState(false); // ✅ Ẩn danh
   const [editingId, setEditingId] = useState(null);
@@ -23,6 +25,11 @@ export const Comments = ({ bookId }) => {
       dispatch(fetchCommentsByBook(bookId));
     }
   }, [bookId, dispatch]);
+
+  useEffect(() => {
+    setComponentsLoading(loading);
+  }, [loading]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!currentUser) return alert("Vui lòng đăng nhập để bình luận!");
@@ -64,9 +71,7 @@ export const Comments = ({ bookId }) => {
     }
   };
 
-  if (loading) {
-    return <p className="text-center text-gray-500">Đang tải bình luận...</p>;
-  }
+  if (loading) return <ComponentLoading />;
 
   return (
     <div className="py-4">
@@ -97,7 +102,7 @@ export const Comments = ({ bookId }) => {
               type="checkbox"
               checked={isAnonymous}
               onChange={(e) => setIsAnonymous(e.target.checked)}
-              className="sr-only"
+              className="sr-only text-base"
             />
             {/* Nền switch */}
             <div

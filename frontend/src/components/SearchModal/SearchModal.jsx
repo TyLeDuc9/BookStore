@@ -31,7 +31,7 @@ export const SearchModal = ({ onClose, keyword }) => {
     const fetchSuggestions = async () => {
       try {
         setLoading(true);
-        const data = await searchBooks({ q: keyword, page: 1, limit: 5 });
+        const data = await searchBooks({ q: keyword, page: 1, limit: 3 });
         if (isMounted) {
           setSuggestions(data.books || []);
         }
@@ -56,7 +56,7 @@ export const SearchModal = ({ onClose, keyword }) => {
       className="absolute top-5 lg:top-8 left-0 mt-2.5 w-full bg-white z-50 border border-gray-200"
     >
       {loading && (
-        <p className="p-4 text-sm text-gray-500 italic">Đang tìm kiếm...</p>
+        <p className="p-4 lg:text-sm text-xs text-gray-500 italic">Đang tìm kiếm...</p>
       )}
 
       {!loading && suggestions.length === 0 && keyword.trim() && (
@@ -76,10 +76,10 @@ export const SearchModal = ({ onClose, keyword }) => {
               <img
                 src={Array.isArray(book.images) ? book.images[0] : book.images}
                 alt={book.name}
-                className="lg:w-12 lg:h-16 w-12 h-14 object-cover rounded border"
+                className="lg:w-12 lg:h-16 w-10 h-14 object-cover rounded border"
               />
               <div className="flex-1 lg:text-sm text-xs">
-                <p className="font-medium text-[#2d525c]">{book.name}</p>
+                <p className="font-medium line-clamp-1 text-[#2d525c]">{book.name}</p>
 
                 {/* Nếu có giảm giá thì hiển thị cả giá gốc */}
                 {Number(book.discountValue) > 0 ? (

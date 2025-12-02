@@ -6,9 +6,8 @@ import {
   deleteStart, deleteSuccess, deleteFailed,
   setDefaultStart, setDefaultSuccess, setDefaultFailed
 } from "./shippingAddressSlice";
-
-// const API_SHIPPINGADDRESS = "http://localhost:8000/shipping-address";
-const API_SHIPPINGADDRESS = "https://bookstore-backend-wy3q.onrender.com/shipping-address";
+import { API } from "../../config/api";
+const API_SHIPPINGADDRESS = `${API}/shipping-address`;
 
 export const fetchAddresses = (userId) => async (dispatch) => {
   try {

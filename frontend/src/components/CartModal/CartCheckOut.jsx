@@ -34,7 +34,7 @@ export const CartCheckOut = () => {
                 </span>
               </div>
               <div className="flex flex-col">
-                <div className="font-medium text-xs text-gray-700 lg:text-sm truncate lg:max-w-[360px] max-w-[300px]" title={item.name}>
+                <div className="font-medium text-xs text-gray-700 lg:text-sm line-clamp-1 truncate lg:max-w-[360px] max-w-[150px]" title={item.name}>
                   {item.name}
                 </div>
                 {item.volume && (

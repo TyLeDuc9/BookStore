@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Title } from '../Title/Title';
 import { Link } from 'react-router-dom';
 import { BiMinus } from "react-icons/bi";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useAllCategory } from '../../hooks/useAllCategory';
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const GenreList = () => {
     const { allCategory, loading, err } = useAllCategory()
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(!show);
 
-    if (loading) return <p>Loading...</p>;
+    const { setComponentsLoading } = useLoading();
+
+    useEffect(() => {
+        setComponentsLoading(loading);
+    }, [loading]);
+    if (loading) return <ComponentLoading />;
     if (err) return <p>Error: {err}</p>;
     return (
         <div className='lg:px-6'>

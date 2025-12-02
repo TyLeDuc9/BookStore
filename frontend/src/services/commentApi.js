@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-// const API_COMMENT = "http://localhost:8000/comment";
-const API_COMMENT = "https://bookstore-backend-wy3q.onrender.com/comment";
+import { API } from "../config/api";
+const API_COMMENT = `${API}/comment`;
 export const deleteCommnetBook = async (id) => {
     const res = await axios.delete(`${API_COMMENT}/${id}`, { headers: getAuthHeader(), })
     return res.data

@@ -4,8 +4,12 @@ import { useMyOrderList } from "../../hooks/useMyOrderList";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Pagination } from "antd";
 import { updateOrderStatus } from '../../services/orderApi';
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const MyOrderList = () => {
+    const { setComponentsLoading } = useLoading();
     const [searchParams, setSearchParams] = useSearchParams();
     const pageParam = parseInt(searchParams.get("page") || 1);
     const [currentPage, setCurrentPage] = useState(pageParam);
@@ -19,6 +23,9 @@ export const MyOrderList = () => {
         cancelled: "text-red-400",
     };
     useEffect(() => {
+        setComponentsLoading(loading);
+    }, [loading]);
+    useEffect(() => {
         setSearchParams({ page: currentPage });
     }, [currentPage]);
 
@@ -27,22 +34,25 @@ export const MyOrderList = () => {
     const handleCancelOrder = async (orderId) => {
         try {
             await updateOrderStatus(orderId, "cancelled");
-            alert("Hủy đơn thành công!");
-            window.location.reload();
+            toast.success("Hủy đơn thành công!");
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
         } catch (err) {
             console.error(err);
-            alert("Hủy đơn thất bại!");
+            toast.error("Hủy đơn thất bại!");
         }
     };
 
     const tdClass = "border border-gray-600"
     const thClass = "border border-gray-200 p-2";
-    if (loading) return <p className="text-center py-6">Đang tải danh sách đơn hàng...</p>;
+    
+    if (loading) return <ComponentLoading />;
     if (error) return <p className="text-center text-red-500 py-6">{error}</p>;
     if (!orders || orders.length === 0) return <p className="text-center py-6">Bạn chưa có đơn hàng nào.</p>;
 
     return (
-        <div className="w-[90%] lg:w-[85%] mx-auto lg:py-10 py-4">
+        <div className="w-full lg:w-[85%] mx-auto lg:py-10 py-4">
             <Title title="Lịch sử đơn hàng" className="lg:text-lg text-base mb-6" />
 
             {/* ======================== DESKTOP TABLE ======================== */}
@@ -169,6 +179,7 @@ export const MyOrderList = () => {
                     onChange={(page) => setCurrentPage(page)}
                 />
             </div>
+            <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );
 };

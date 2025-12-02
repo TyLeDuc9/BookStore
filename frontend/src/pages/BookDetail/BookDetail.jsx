@@ -33,7 +33,7 @@ export const BookDetail = () => {
       <div className="relative">
         <img src={banner2} className="lg:w-full lg:h-[50vh] w-full sm:h-[25vh] h-[20vh] object-cover" />
         <span className="absolute inset-0 flex text-[#3a606e] items-center 
-        justify-center lg:text-3xl text-xl italic font-medium uppercase">
+        justify-center lg:text-3xl text-lg italic font-medium uppercase">
           {book.name}
         </span>
       </div>

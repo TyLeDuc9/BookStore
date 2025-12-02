@@ -5,10 +5,9 @@ import {
   updateUserStart, updateUserSuccess, updateFailed
 } from './authSlice';
 import { getAuthHeader } from "../../utils/authHeader";
-// const API_AUTH = "http://localhost:8000/auth"
-// const API_USER = "http://localhost:8000/user"
-const API_AUTH = "https://bookstore-backend-wy3q.onrender.com/auth"
-const API_USER = "https://bookstore-backend-wy3q.onrender.com/user"
+import { API } from "../../config/api";
+const API_AUTH = `${API}/auth`;
+const API_USER = `${API}/user`;
 export const changePassword = async (token, userData) => {
   try {
     const res = await axios.put(`${API_USER}/change-password`, userData, {

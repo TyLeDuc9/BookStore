@@ -48,7 +48,7 @@ export const FormRegister = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="border lg:px-4 lg:py-2 py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none"
+          className="border lg:px-4 lg:py-2 py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none"
         />
 
         {/* Password + toggle */}
@@ -59,7 +59,7 @@ export const FormRegister = () => {
             placeholder="Mật khẩu"
             value={formData.password}
             onChange={handleChange}
-            className="w-full border lg:px-4 lg:py-2 py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none "
+            className="w-full border lg:px-4 lg:py-2 py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none "
             required
           />
           <span

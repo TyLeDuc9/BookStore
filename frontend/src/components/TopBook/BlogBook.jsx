@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAllBlog } from "../../hooks/useAllBlog";
 import Slider from 'react-slick';
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 // 👉 Custom arrows
 const NextArrow = ({ onClick }) => (
   <div
@@ -31,21 +32,21 @@ const sliderSettings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 3,
+  slidesToShow: 3, // iPad, Laptop, Desktop
+  slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
   responsive: [
     {
-      breakpoint: 1024,
-      settings: { slidesToShow: 3, slidesToScroll: 2 },
-    },
-    {
-      breakpoint: 768,
-      settings: { slidesToShow: 2, slidesToScroll: 1 },
+      breakpoint: 768, // Mobile (≤ 768px)
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      },
     },
   ],
 };
+
 
 // 👉 Main component
 export const BlogBook = () => {
@@ -53,12 +54,15 @@ export const BlogBook = () => {
   const navigate = useNavigate()
 
   const handleBlog = (id) => {
-    console.log("ID blog được click:", id) // ✅ kiểm tra ID
-    navigate(`/blog/${id}`) // hoặc `/blog/${id}/${slug}` nếu route có slug
+    navigate(`/blog/${id}`)
   }
 
-  if (loading)
-    return <p className="text-center text-gray-500 mt-10">Loading...</p>;
+  const { setComponentsLoading } = useLoading();
+
+  useEffect(() => {
+    setComponentsLoading(loading);
+  }, [loading]);
+  if (loading) return <ComponentLoading />;
   if (error)
     return <p className="text-center text-red-500 mt-10">Error: {error.message}</p>;
 
@@ -80,16 +84,16 @@ export const BlogBook = () => {
               </div>
 
               {/* Content */}
-              <div className="p-3 flex-1 flex flex-col justify-between">
+              <div className="p-2 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-xs text-gray-500 flex items-center gap-1 italic">
+                  <p className="text-xs text-gray-500 flex items-center italic">
                     <FaCalendarAlt className="text-gray-400" />
                     {new Date(item.createdAt).toLocaleDateString("vi-VN")}
                   </p>
 
                   <h3
                     onClick={() => handleBlog(item._id)}
-                    className="lg:text-base text-sm line-clamp-2 font-medium py-2 hover:text-[#4d8898] lg:line-clamp-3 cursor-pointer">
+                    className="lg:text-base text-sm line line-clamp-2 font-medium py-2 hover:text-[#4d8898] lg:line-clamp-3 cursor-pointer">
                     {item.title}
                   </h3>
                 </div>

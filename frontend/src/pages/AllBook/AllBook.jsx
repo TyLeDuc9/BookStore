@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Title } from "../../components/Title/Title";
 import { useSearchParams } from "react-router-dom";
-import { useLoading } from '../../context/LoadingContext';
 import { SortBook } from "../../components/Sort/SortBook";
 import { useAllBook } from "../../hooks/useAllBook";
 import { BookCard } from "../../components/BookCard/BookCard";
+import { useLoading } from '../../context/LoadingContext';
 import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 import { Pagination } from "antd";
 import { GenreList } from "../../components/Genre/GenreList";
@@ -41,7 +41,7 @@ export const AllBook = () => {
     return (
         <section>
             <BannerPages />
-            <div className="grid lg:grid-cols-12 grid-cols-1 bg-[#ffffff] w-[85%] mx-auto lg:my-12 gap-2">
+            <div className="grid lg:grid-cols-12 grid-cols-1 bg-[#ffffff] w-[85%] mx-auto my-12 gap-2">
                 <div className="lg:col-span-3">
                     <GenreList />
                     <GenrePublisher />
@@ -52,7 +52,7 @@ export const AllBook = () => {
                     <div className="flex flex-col lg:flex-row lg:justify-between mb-6 lg:mt-0 mt-4 ml-2">
                         <Title
                             title="Tất cả sách"
-                            className="lg:text-[22px] sm:text-base  text-sm font-medium text-[#2d525c]"
+                            className="lg:text-[22px] uppercase sm:text-base  text-sm font-medium text-[#2d525c]"
                         />
                         <SortBook sort={sort} setSort={setSort} />
                     </div>

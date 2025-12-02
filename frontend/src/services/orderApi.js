@@ -1,9 +1,7 @@
 import axios from "axios";
 import { getAuthHeader } from "../utils/authHeader";
-
-
-// const API_ORDER_DETAIL = "http://localhost:8000/order-detail";
-const API_ORDER_DETAIL = "https://bookstore-backend-wy3q.onrender.com/order-detail";
+import { API } from "../config/api";
+const API_ORDER_DETAIL =`${API}/order-detail`; 
 
 
 export const getOrderDetails = async ({ orderId }) => {

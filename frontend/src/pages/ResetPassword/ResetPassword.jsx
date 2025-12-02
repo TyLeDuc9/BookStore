@@ -44,7 +44,7 @@ export const ResetPassword = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Mật khẩu mới"
-            className="border border-white/70 placeholder-white/60 lg:px-4 lg:py-2 w-full py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none focus:ring-2 focus:ring-white/70"
+            className="border border-white/70 placeholder-white/60 lg:px-4 lg:py-2 w-full py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none focus:ring-2 focus:ring-white/70"
             required
           />
           <input
@@ -52,7 +52,7 @@ export const ResetPassword = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Xác nhận mật khẩu"
-            className="border border-white/70 placeholder-white/60 lg:px-4 lg:py-2 w-full py-2 px-2 text-white lg:text-base text-sm lg:rounded-lg rounded-sm focus:outline-none focus:ring-2 focus:ring-white/70"
+            className="border border-white/70 placeholder-white/60 lg:px-4 lg:py-2 w-full py-2 px-2 text-white text-base lg:rounded-lg rounded-sm focus:outline-none focus:ring-2 focus:ring-white/70"
             required
           />
           <div className="flex justify-end">

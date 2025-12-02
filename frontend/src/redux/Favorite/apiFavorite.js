@@ -6,9 +6,8 @@ import {
   removeFavorite,
 } from "./favoriteSlice";
 import axios from "axios";
-
-// const API_FAVORITE = "http://localhost:8000/favorite";
-const API_FAVORITE = "https://bookstore-backend-wy3q.onrender.com/favorite";
+import { API } from "../../config/api";
+const API_FAVORITE = `${API}/favorite`;
 
 // 📘 Lấy danh sách yêu thích theo user
 export const fetchFavoritesByUser = (userId) => async (dispatch) => {

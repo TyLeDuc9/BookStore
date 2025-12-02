@@ -68,7 +68,7 @@ export const CategoryBook = () => {
 
             <Title
               title={category?.name || "Danh mục"}
-              className="lg:text-[22px] sm:text-base  text-sm font-medium text-[#2d525c]"
+              className="lg:text-[22px] sm:text-base uppercase text-sm font-medium text-[#2d525c]"
             />
             <SortBook sort={sort} setSort={setSort} />
           </div>

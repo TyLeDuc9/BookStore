@@ -27,7 +27,8 @@ export const Account = () => {
       {/* Banner */}
       <div className="relative">
         <img src={banner2} className="lg:w-full lg:h-[50vh] w-full sm:h-[25vh] h-[20vh] object-cover" alt="Banner" />
-        <span className="absolute inset-0 flex text-[#3a606e] items-center justify-center lg:text-2xl text-base italic font-medium uppercase">
+        <span className="absolute inset-0 flex text-[#3a606e] items-center justify-center 
+        lg:text-2xl text-sm italic font-medium uppercase">
           <Link to="/" className="hover:text-[#5a899a] text-[#3a606e]">
             Trang chủ
           </Link>

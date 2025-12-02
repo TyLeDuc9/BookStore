@@ -7,6 +7,8 @@ import momoLogo from "../../assets/paymentLogo/MoMo.png";
 import codLogo from "../../assets/paymentLogo/Cod.jpg";
 import vnpayLogo from "../../assets/paymentLogo/vnpay.jpg";
 import { createVNPayPayment } from "../../services/paymentApi";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const CheckOutStepTwo = () => {
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.auth.login.currentUser);
@@ -24,7 +26,7 @@ export const CheckOutStepTwo = () => {
 
     setLoading(true);
     try {
-   
+
       const orderData = {
         userId: currentUser._id,
         shippingAddressId: defaultAddress._id,
@@ -34,20 +36,20 @@ export const CheckOutStepTwo = () => {
       const orderId = res.order._id;
 
       if (paymentMethod === "VNPay") {
-  
-        const paymentUrl = await createVNPayPayment(orderId); 
-        window.location.href = paymentUrl; 
+
+        const paymentUrl = await createVNPayPayment(orderId);
+        window.location.href = paymentUrl;
       } else if (paymentMethod === "Momo") {
-        alert("Thanh toán Momo chưa tích hợp, tạm thanh toán COD");
+        toast.info("Thanh toán Momo chưa tích hợp, tạm thanh toán COD");
         navigate(`/orders/${orderId}`);
       } else {
         // COD
-        alert("Đặt hàng thành công!");
-        navigate(`/orders/${orderId}`);
+        toast.success("Đặt hàng thành công!");
+        setTimeout(() => navigate(`/orders/${orderId}`), 800);
       }
     } catch (err) {
       console.error("❌ Lỗi đặt hàng:", err);
-      alert("Đặt hàng thất bại!");
+      toast.error("Đặt hàng thất bại! Vui lòng thử lại.");
     } finally {
       setLoading(false);
     }
@@ -135,6 +137,10 @@ export const CheckOutStepTwo = () => {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} toastStyle={{
+        fontSize: window.innerWidth < 768 ? '12px' : '16px',
+        minWidth: window.innerWidth < 768 ? '10px' : '50px',
+      }} />
     </div>
   );
 };

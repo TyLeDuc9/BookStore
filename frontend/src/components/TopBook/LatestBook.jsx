@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLatestBook } from '../../hooks/useLastestBook';
 import { sliderSettings } from '../../utils/sliderSettings';
 import Slider from 'react-slick';
 import { BookCard } from '../BookCard/BookCard';
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const LatestBook = () => {
     const { latestBook, loading, err } = useLatestBook()
+    const { setComponentsLoading } = useLoading();
 
-    if (loading) return <p>Đang tải</p>;
+    useEffect(() => {
+        setComponentsLoading(loading);
+    }, [loading]);
+
+    if (loading) return <ComponentLoading />;
     if (err) return <p>Có lỗi xảy ra khi tải</p>;
 
     return (
@@ -14,7 +21,7 @@ export const LatestBook = () => {
             <Slider {...sliderSettings}>
                 {latestBook.map((item) => (
                     <div key={item.id}>
-                        <BookCard book={item} /> 
+                        <BookCard book={item} />
                     </div>
                 ))}
             </Slider>

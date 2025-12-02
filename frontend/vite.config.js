@@ -7,10 +7,4 @@ export default defineConfig({
    define: {
     global: 'window', 
   },
-  preview: {
-    host: 'localhost',
-    port: 5000,
-
-    allowedHosts: ['bookstore-ixlc.onrender.com'], 
-  },
 })

@@ -1,19 +1,25 @@
-import React, {  useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BiMinus } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { Title } from '../Title/Title';
 import { useAllPublisher } from '../../hooks/useAllPublisher';
+import { useLoading } from '../../context/LoadingContext';
+import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const GenrePublisher = () => {
-    const { publisher,  loading, error } = useAllPublisher();
+    const { publisher, loading, error } = useAllPublisher();
 
     const [show, setShow] = useState(false)
 
     const handleShow = () => {
         setShow(prev => !prev);
     };
+    const { setComponentsLoading } = useLoading();
 
-    if (loading) return <p>Loading...</p>;
+    useEffect(() => {
+        setComponentsLoading(loading);
+    }, [loading]);
+    if (loading) return <ComponentLoading />;
     if (error) return <p>Error: {error}</p>;
     return (
         <div className='my-4 lg:px-6'>

@@ -9,9 +9,8 @@ import {
   updateCommentSuccess,
   deleteCommentSuccess,
 } from "./commentSlice";
-
-// const API_COMMENT = "http://localhost:8000/comment";
-const API_COMMENT = "https://bookstore-backend-wy3q.onrender.com/comment";
+import { API } from "../../config/api";
+const API_COMMENT = `${API}/comment`;
 
 // 🔑 Hàm tiện ích lấy header có token
 
