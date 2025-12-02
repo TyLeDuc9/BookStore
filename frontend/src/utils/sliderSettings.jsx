@@ -13,7 +13,7 @@ export const NextArrow = ({ onClick }) => (
 
 export const PrevArrow = ({ onClick }) => (
   <div
-    className="absolute lg:left-2 -left-1 left top-1/2 transform -translate-y-1/2 cursor-pointer z-10 bg-gray-100/70 p-2 hover:opacity-75 
+    className="absolute lg:left-2 -left-1 top-1/2 transform -translate-y-1/2 cursor-pointer z-10 bg-gray-100/70 p-2 hover:opacity-75 
     rounded-full"
     onClick={onClick}
   >
