@@ -36,19 +36,13 @@ export const sliderSettings = {
 
   responsive: [
     {
-      breakpoint: 600, // nhỏ hơn 600px → mobile
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
+      breakpoint: 600, // từ 600px trở lên → tablet
+      settings: { slidesToShow: 3 }
     },
     {
-      breakpoint: 1024, // nhỏ hơn 1024px → tablet
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-  ],
+      breakpoint: 1024, // từ 1024px trở lên → desktop
+      settings: { slidesToShow: 5 }
+    }
+  ]
 };
 
