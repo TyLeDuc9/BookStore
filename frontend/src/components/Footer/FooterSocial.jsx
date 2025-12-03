@@ -7,7 +7,7 @@ export const FooterSocial = () => {
   return (
     <div className="text-white">
       <h2 className="font-bold lg:text-lg text-base mb-3">Kết nối với chúng tôi</h2>
-      <div className="flex gap-4 lg:text-xl sm:text-lg text-sm">
+      <div className="flex gap-4 lg:text-xl text-lg">
         <a
           href="https://www.facebook.com/eucyldt/"
           target="_blank"
