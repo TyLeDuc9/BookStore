@@ -20,7 +20,6 @@ export const PrevArrow = ({ onClick }) => (
     <MdArrowBackIos className="text-gray-400 lg:text-xl text-lg" />
   </div>
 );
-
 export const sliderSettings = {
   dots: false,
   infinite: false,
@@ -34,19 +33,20 @@ export const sliderSettings = {
 
   responsive: [
     {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
-    {
-      breakpoint: 1024, 
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
   ],
 };
+
 
