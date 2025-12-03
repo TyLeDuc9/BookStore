@@ -36,7 +36,7 @@ const settings = {
   slidesToScroll: 1,
   autoplay: false,
   autoplaySpeed: 3000,
-  arrows: false,
+  arrows: true,
   responsive: [
     {
       breakpoint: 1024, // màn hình nhỏ hơn 1024px
@@ -56,7 +56,6 @@ const settings = {
 };
 
 
-// 👉 Main component
 export const BlogBook = () => {
   const { blogs, loading, error } = useAllBlog();
   const navigate = useNavigate()
