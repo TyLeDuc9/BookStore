@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/Auth/authSlice";
 import { fetchCart } from "../../redux/Cart/apiCart";
 import { useNavigate } from "react-router-dom";
-
+import { API } from "../../config/api";
 export const LoginEmail = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -15,11 +15,11 @@ export const LoginEmail = () => {
       const idToken = credentialResponse.credential;
 
       // Gửi token Google về backend
-      const res = await axios.post("http://localhost:8000/auth/login-google", {
+      const res = await axios.post(`${API}/auth/login-google`, {
         token: idToken,
       });
 
-  
+
 
       // Lưu vào localStorage
       localStorage.setItem("token", res.data.token);
