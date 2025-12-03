@@ -17,14 +17,17 @@ export const LatestBook = () => {
     if (err) return <p>Có lỗi xảy ra khi tải</p>;
 
     return (
-        <div className="w-[89%] mx-auto lg:my-8 my-4">
-            <Slider {...sliderSettings}>
-                {latestBook.map((item) => (
-                    <div key={item.id}>
-                        <BookCard book={item} />
-                    </div>
-                ))}
-            </Slider>
+        <div className="overflow-x-hidden">
+            <div className="lg:w-[89%] lg:mx-auto lg:my-8 my-4 px-4 sm:px-6">
+                <Slider {...sliderSettings}>
+                    {latestBook.map((item) => (
+                        <div key={item.id}>
+                            <BookCard book={item} />
+                        </div>
+                    ))}
+                </Slider>
+            </div>
         </div>
+
     )
 }
