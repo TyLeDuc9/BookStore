@@ -7,25 +7,25 @@ import { useNavigate } from 'react-router-dom';
 import { useLoading } from '../../context/LoadingContext';
 import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 // 👉 Custom arrows
-// const NextArrow = ({ onClick }) => (
-//   <div
-//     className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10 
-//     bg-gray-100/80 p-2 rounded-full hover:bg-gray-200 transition"
-//     onClick={onClick}
-//   >
-//     <MdArrowForwardIos className="text-gray-600 lg:text-xl text-lg" />
-//   </div>
-// );
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10 
+    bg-gray-100/80 p-2 rounded-full hover:bg-gray-200 transition"
+    onClick={onClick}
+  >
+    <MdArrowForwardIos className="text-gray-600 lg:text-xl text-lg" />
+  </div>
+);
 
-// const PrevArrow = ({ onClick }) => (
-//   <div
-//     className="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10 
-//     bg-gray-100/80 p-2 rounded-full hover:bg-gray-200 transition"
-//     onClick={onClick}
-//   >
-//     <MdArrowBackIos className="text-gray-600 lg:text-xl text-lg" />
-//   </div>
-// );
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-10 
+    bg-gray-100/80 p-2 rounded-full hover:bg-gray-200 transition"
+    onClick={onClick}
+  >
+    <MdArrowBackIos className="text-gray-600 lg:text-xl text-lg" />
+  </div>
+);
 
 // 👉 Slider settings
 const settings = {
@@ -36,9 +36,9 @@ const settings = {
   slidesToScroll: 1,
   autoplay: false,
   autoplaySpeed: 3000,
-  arrows: false,
-  // nextArrow: <NextArrow />,
-  // prevArrow: <PrevArrow />,
+  arrows: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
   responsive: [
     {
       breakpoint: 1024,
