@@ -11,7 +11,6 @@ import { GenreList } from "../../components/Genre/GenreList";
 import { GenrePublisher } from "../../components/Genre/GenrePublisher";
 import { GenrePrice } from '../../components/Genre/GenrePrice'
 import { BannerPages } from "../../components/Banner/BannerPages";
-import { BlogBook } from "../../components/TopBook/BlogBook";
 export const AllBook = () => {
     const { setComponentsLoading } = useLoading();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -76,9 +75,8 @@ export const AllBook = () => {
                         </div>
                     )}
                 </div>
-             
+
             </div>
-                  <BlogBook />
         </section>
     );
 };
