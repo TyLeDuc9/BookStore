@@ -1,99 +1,81 @@
+📚 BookNest – MERN Stack Project
+
+BookNest là một dự án website bán sách / đọc sách online được xây dựng theo kiến trúc MERN Stack, bao gồm các chức năng: xem chi tiết sách, tìm kiếm, giỏ hàng (nếu bạn thêm), lưu sách yêu thích, đăng nhập, cập nhật thông tin người dùng,…
+
 📩 Liên hệ
-
 Gmail: ducty9963@gmail.com
-
 Facebook: https://www.facebook.com/eucyldt/
 
 🚀 Công nghệ sử dụng
-🔹 Frontend
 
-React.js
+### 🔹 Frontend
 
-Redux Toolkit
+- React.js
+- Redux Toolkit
+- Axios
+- React Router
+- TailwindCSS
 
-Axios
+### 🔹 Backend
 
-React Router
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT – xác thực người dùng
+- bcryptjs – mã hóa mật khẩu
 
-Tailwind CSS
+## 🎯 Chức năng chính
 
-🔹 Backend
+- Đăng ký, đăng nhập bằng JWT, đổi mật khẩu, lấy lại mật khẩu
+- Xem, thêm sản phẩm giỏ hàng, mua hàng, thanh toán
+- Tìm kiếm sách, loc theo giá, danh mục thể loại, nhà xuất bản
+- Thêm sách vào danh sách yêu thích, đánh giá, bình luận
+- Cập nhật thông tin cá nhân
 
-Node.js
 
-Express.js
+## 📥 Cài đặt dự án
 
-MongoDB / Mongoose
+### 🔹 1. Clone dự án
 
-JWT – xác thực người dùng
-
-bcryptjs – mã hóa mật khẩu
-
-🎯 Chức năng chính
-
-✔ Đăng ký, đăng nhập bằng JWT
-
-✔ Đổi mật khẩu, quên mật khẩu
-
-✔ Xem chi tiết sách
-
-✔ Tìm kiếm theo tên, lọc theo giá, thể loại, nhà xuất bản
-
-✔ Thêm sách vào danh sách yêu thích
-
-✔ Đánh giá, bình luận sách
-
-✔ Cập nhật thông tin cá nhân
-
-✔ (Tuỳ chọn) Giỏ hàng, thanh toán VNPay
-
-📥 Cài đặt dự án
-🔹 1. Clone dự án
+```bash
 git clone https://github.com/TyLeDuc9/BookStore.git
 cd BookStore
 
 ⚙ Backend Setup
-📌 Cài đặt thư viện
 cd backend
 npm install
 
-📌 Tạo file .env
+🔹 Tạo file .env
 MONGO_URL=mongodb://localhost:27017/yourdb
 JWT_SECRET=your_secret_key
-
-# Cloudinary
 CLOUDINARY_CLOUD_NAME=your_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_secret_key
-
-# Google Login
 GOOGLE_CLIENT_ID=your_client_id
 GOOGLE_SECRET=your_secret_key
-
-# Email Service
 EMAIL_USER=your_email
 EMAIL_PASS=your_pass
-
-CLIENT_URL=your_frontend_url
-
-# VNPay
+CLIENT_URL=your_url_web
 VNP_TMNCODE=your_vnpay_code
 VNP_HASH_SECRET=your_secret_key
 
-📌 Chạy Backend
+🔹 Chạy Backend
 npm start
 
 💻 Frontend Setup
-📌 Cài đặt thư viện
+🔹 Cài đặt thư viện
 cd frontend
 npm install
 
-📌 Tạo file .env
+🔹 Tạo file .env
+
 VITE_GOOGLE_CLIENT_ID=your_key
 
-📌 Chạy Frontend
+🔹 Chạy Frontend
 npm run dev
 
 🌐 Truy cập website
 
 👉 https://bookstore-1-3bb1.onrender.com
+```

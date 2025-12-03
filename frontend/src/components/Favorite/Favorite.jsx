@@ -6,7 +6,8 @@ import {
   removeFromFavorite,
   checkIsFavorite,
 } from "../../redux/Favorite/apiFavorite";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const Favorite = ({ userId, bookDetailId }) => {
   const dispatch = useDispatch();
   const [liked, setLiked] = useState(false);
@@ -28,7 +29,7 @@ export const Favorite = ({ userId, bookDetailId }) => {
 
   const handleClick = async () => {
     if (!userId) {
-      alert("Vui lòng đăng nhập để thêm yêu thích");
+      toast.error("Vui lòng đăng nhập để thêm yêu thích");
       return;
     }
 
@@ -48,10 +49,13 @@ export const Favorite = ({ userId, bookDetailId }) => {
   return (
     <div className="cursor-pointer flex items-center" onClick={handleClick}>
       <FaHeart
-        className={`${
-          liked ? "text-red-500" : "text-gray-300"
-        } lg:text-lg text-base transition-colors duration-200`}
+        className={`${liked ? "text-red-500" : "text-gray-300"
+          } lg:text-lg text-base transition-colors duration-200`}
       />
+      <ToastContainer position="top-right" autoClose={3000} toastStyle={{
+        fontSize: window.innerWidth < 768 ? '12px' : '16px',
+        minWidth: window.innerWidth < 768 ? '10px' : '50px',
+      }} />
     </div>
   );
 };

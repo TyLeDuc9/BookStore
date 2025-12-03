@@ -25,8 +25,6 @@ const authSlice = createSlice({
 
     loginSuccess: (state, action) => {
       const user = action.payload;
-
-      // ✅ Chuẩn hóa: luôn có _id (kể cả khi backend trả về id)
       const normalizedUser = {
         ...user,
         _id: user._id || user.id,
@@ -35,8 +33,6 @@ const authSlice = createSlice({
       state.login.isFetching = false;
       state.login.currentUser = normalizedUser;
       state.login.error = false;
-
-      // ✅ Lưu localStorage để persist
       localStorage.setItem("user", JSON.stringify(normalizedUser));
     },
 
@@ -45,7 +41,6 @@ const authSlice = createSlice({
       state.login.error = true;
     },
 
-    // ===== REGISTER =====
     registerStart: (state) => {
       state.register.isFetching = true;
     },
@@ -59,8 +54,6 @@ const authSlice = createSlice({
       state.register.error = true;
       state.register.success = false;
     },
-
-    // ===== LOGOUT =====
     logout: (state) => {
       state.login.currentUser = null;
       state.login.isFetching = false;

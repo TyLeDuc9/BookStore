@@ -7,6 +7,8 @@ import { CartModal } from "../../components/CartModal/CartModal";
 import { addToCart } from "../../redux/Cart/apiCart";
 import { Favorite } from "../../components/Favorite/Favorite";
 import { Rating } from '../../components/Rating/Rating'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export const BookDetailInformation = ({ book }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ export const BookDetailInformation = ({ book }) => {
 
   const handleAddToCart = async () => {
     if (!currentUser) {
-      alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng");
+      toast.error("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng");
       return;
     }
     if (!selectedDetail) return;
@@ -57,7 +59,7 @@ export const BookDetailInformation = ({ book }) => {
 
   const handleBuyNow = async () => {
     if (!currentUser) {
-      alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng");
+      toast.error("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng");
       return;
     }
     if (!selectedDetail) return;
@@ -237,6 +239,10 @@ export const BookDetailInformation = ({ book }) => {
       </div>
       {/* Modal giỏ hàng */}
       <CartModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ToastContainer position="top-right" autoClose={3000} toastStyle={{
+        fontSize: window.innerWidth < 768 ? '12px' : '16px',
+        minWidth: window.innerWidth < 768 ? '10px' : '50px',
+      }} />
     </div>
   );
 };
