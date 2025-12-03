@@ -81,7 +81,7 @@ export const FormLogin = () => {
         >
           {isFetching ? "Đang xử lý..." : "Đăng nhập"}
         </button>
-        <div className="w-full">
+        <div className="w-full flex items-center justify-center">
           <LoginEmail />
           {/* <LoginFacebook /> */}
         </div>

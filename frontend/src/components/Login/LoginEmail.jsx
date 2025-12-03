@@ -38,7 +38,7 @@ export const LoginEmail = () => {
   };
 
   return (
-    <div className="w-full rounded-lg">
+    <div className="w-[50%] rounded-lg">
       <GoogleLogin
         onSuccess={handleGoogleSuccess}
         onError={() => {
