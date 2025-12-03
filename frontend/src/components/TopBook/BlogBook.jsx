@@ -34,6 +34,8 @@ const settings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 3000,
   arrows: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
@@ -50,13 +52,12 @@ const settings = {
       breakpoint: 767,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        arrows: false,
+        slidesToScroll: 1,
+        arrows: false, // Ẩn arrow trên mobile (nếu muốn)
       },
     },
   ],
 };
-
 
 
 
@@ -81,8 +82,7 @@ export const BlogBook = () => {
     <div className="relative w-[90%] mx-auto lg:my-12 sm:my-12 my-6">
       <Slider {...settings}>
         {blogs.map((item) => (
-          <div key={item._id} className="px-4" style={{ padding: "0 8px", boxSizing: "border-box" }}
-          >
+          <div key={item._id} className="px-4" >
             <div className="bg-gray-100 rounded-lg overflow-hidden flex flex-col lg:h-80 sm:h-80 h-48">
               {/* Image */}
               <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden">
@@ -105,7 +105,8 @@ export const BlogBook = () => {
 
                   <h3
                     onClick={() => handleBlog(item._id)}
-                    className="lg:text-base text-sm line line-clamp-2 font-medium py-2 hover:text-[#4d8898] lg:line-clamp-3 cursor-pointer">
+                    className="lg:text-base text-sm line line-clamp-2 font-medium py-2 hover:text-[#4d8898] 
+                    lg:line-clamp-3 cursor-pointer">
                     {item.title}
                   </h3>
                 </div>
