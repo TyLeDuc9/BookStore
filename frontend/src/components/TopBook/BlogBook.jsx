@@ -82,7 +82,7 @@ export const BlogBook = () => {
     <div className="relative w-[90%] mx-auto lg:my-12 sm:my-12 my-6">
       <Slider {...settings}>
         {blogs.map((item) => (
-          <div key={item._id} className="px-4" >
+          <div key={item._id} className="px-4">
             <div className="bg-gray-100 rounded-lg overflow-hidden flex flex-col lg:h-80 sm:h-80 h-48">
               {/* Image */}
               <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden">
@@ -105,8 +105,7 @@ export const BlogBook = () => {
 
                   <h3
                     onClick={() => handleBlog(item._id)}
-                    className="lg:text-base text-sm line line-clamp-2 font-medium py-2 hover:text-[#4d8898] 
-                    lg:line-clamp-3 cursor-pointer">
+                    className="lg:text-base text-sm line line-clamp-2 font-medium py-2 hover:text-[#4d8898] lg:line-clamp-3 cursor-pointer">
                     {item.title}
                   </h3>
                 </div>
