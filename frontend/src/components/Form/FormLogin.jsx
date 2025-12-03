@@ -7,7 +7,7 @@ import { loginUser } from '../../redux/Auth/authApi';
 import { fetchCart } from '../../redux/Cart/apiCart';
 import { useNavigate } from 'react-router-dom';
 import { LoginEmail } from '../Login/LoginEmail';
-import { LoginFacebook } from '../Login/LoginFacebook';
+// import { LoginFacebook } from '../Login/LoginFacebook';
 
 export const FormLogin = () => {
   const { showPassword, togglePassword } = useTogglePassword();
@@ -81,9 +81,9 @@ export const FormLogin = () => {
         >
           {isFetching ? "Đang xử lý..." : "Đăng nhập"}
         </button>
-        <div className="flex justify-between gap-2 mt-2">
+        <div className="w-full">
           <LoginEmail />
-          <LoginFacebook />
+          {/* <LoginFacebook /> */}
         </div>
 
         {/* Link đăng ký */}
