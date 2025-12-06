@@ -86,7 +86,7 @@ exports.loginWithGoogle = async (req, res) => {
 };
 exports.registerByEmail = async (req, res) => {
   try {
-    const { email, password } = req.body; // ❌ bỏ role
+    const { email, password } = req.body; 
     if (!email || !password) {
       return res.status(400).json({ message: "Cần nhập email và mật khẩu" });
     }
@@ -103,7 +103,7 @@ exports.registerByEmail = async (req, res) => {
     const newUser = await User.create({
       email,
       password: hashedPassword,
-      role: "user", // ✅ chỉ cho role = "user"
+      role: "user",
     });
 
     res.status(201).json({ message: "Đăng ký thành công", userId: newUser._id });
@@ -111,7 +111,6 @@ exports.registerByEmail = async (req, res) => {
     res.status(500).json({ err: err.message });
   }
 };
-// ✅ loginByEmail
 exports.loginByEmail = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -130,8 +129,6 @@ exports.loginByEmail = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
-
-    // ✅ Loại bỏ password khi trả về
     const { password: _, ...userData } = existUser.toObject();
 
     res.json({
