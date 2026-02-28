@@ -86,8 +86,8 @@ export const FormRegister = () => {
 
         {/* Links */}
         <p className="lg:text-sm text-xs text-gray-200 text-center">
-          <a href="/tai-khoan/dang-nhap" className="text-white hover:underline">Đăng nhập</a> |
-          <a href="/" className="text-white hover:underline ml-1">Trang chủ</a>
+          <Link to="/tai-khoan/dang-nhap" className="text-white hover:underline">Đăng nhập</Link> |
+          <Link to="/" className="text-white hover:underline ml-1">Trang chủ</Link>
         </p>
       </form>
     </div>

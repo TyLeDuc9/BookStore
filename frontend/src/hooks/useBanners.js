@@ -1,4 +1,4 @@
-import { getBanners } from "../services/bannerApi";
+import { getBanners } from "../services/bannerApi"
 import React, { useEffect, useState } from 'react'
 
 export const useBanners = () => {

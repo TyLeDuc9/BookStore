@@ -2,7 +2,6 @@ const Blog = require("../models/Blog");
 const Book = require("../models/Book");
 
 // =================== CREATE BLOG ===================
-// =================== CREATE BLOG ===================
 exports.createBlog = async (req, res) => {
   try {
     const { title, content, bookName } = req.body;
@@ -166,7 +165,6 @@ exports.updateBlog = async (req, res) => {
     });
   }
 };
-
 
 // =================== DELETE BLOG ===================
 exports.deleteBlog = async (req, res) => {

@@ -89,16 +89,16 @@ export const FormLogin = () => {
         {/* Link đăng ký */}
         <p className="lg:text-sm text-xs text-gray-200 text-center">
           Bạn chưa có tài khoản?{" "}
-          <a href="/tai-khoan/dang-ky" className="text-white font-medium hover:underline">
+          <Link to="/tai-khoan/dang-ky" className="text-white font-medium hover:underline">
             Đăng ký
-          </a>
+          </Link>
         </p>
 
         {/* Quên mật khẩu */}
         <p className="lg:text-sm text-xs text-gray-600 text-center">
-          <a href="/forgot-password" className="text-white font-medium hover:underline">
+          <Link to="/forgot-password" className="text-white font-medium hover:underline">
             Quên mật khẩu?
-          </a>
+          </Link>
         </p>
       </form>
     </div>

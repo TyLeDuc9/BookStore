@@ -11,7 +11,7 @@ exports.updatePublisher = async (req, res) => {
 
         if (name) {
             publisher.name = name;
-            publisher.slug = slugify(name, { lower: true, strict: true }); 
+            publisher.slug = slugify(name, { lower: true, strict: true });
         }
         if (address) publisher.address = address;
         if (email) publisher.email = email;
@@ -27,13 +27,25 @@ exports.updatePublisher = async (req, res) => {
 exports.createPublisher = async (req, res) => {
   try {
     const { name, address, phone, email } = req.body;
+
+
     const image = req.file ? req.file.path : null;
+ 
 
     if (!name || !address || !phone || !email) {
       return res.status(400).json({ message: "Vui lòng nhập đầy đủ thông tin" });
     }
 
-    const publisher = new Publisher({ name, address, phone, email, image });
+    const publisher = new Publisher({
+      name,
+      address,
+      phone,
+      email,
+      image
+    });
+
+    console.log('PUBLISHER IMAGE:', publisher.image); 
+
     const saved = await publisher.save();
     res.status(201).json(saved);
   } catch (err) {

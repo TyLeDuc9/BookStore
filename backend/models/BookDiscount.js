@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
 const bookDiscountSchema = new mongoose.Schema({
-  title: { type: String, required: true }, // tên chương trình, ví dụ: "Sale 10% toàn bộ sách"
-  description: { type: String },           // mô tả thêm (optional)
+  title: { type: String, required: true },
+  description: { type: String },          
   discountType: {
     type: String,
-    enum: ["percentage", "fixed"],         // giảm % hoặc giảm số tiền
+    enum: ["percentage", "fixed"],        
     required: true
   },
-  value: { type: Number, required: true }, // % hoặc số tiền giảm
+  value: { type: Number, required: true }, 
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },
-  isActive: { type: Boolean, default: true } // bật/tắt chương trình
+  isActive: { type: Boolean, default: true } 
 }, { timestamps: true });
 
 module.exports = mongoose.model("BookDiscount", bookDiscountSchema);

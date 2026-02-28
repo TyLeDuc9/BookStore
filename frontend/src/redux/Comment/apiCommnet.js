@@ -15,7 +15,7 @@ const API_COMMENT = `${API}/comment`;
 // 🔑 Hàm tiện ích lấy header có token
 
 const getAuthConfig = () => {
-  const token = localStorage.getItem("token"); // ✅ Đúng key
+  const token = localStorage.getItem("token"); 
   if (!token) return {};
   return {
     headers: {
@@ -50,19 +50,7 @@ export const createComment = (commentData) => async (dispatch) => {
   }
 };
 
-// 📌 Cập nhật bình luận (chỉ chủ sở hữu)
-// export const updateComment = (commentId, newDescription) => async (dispatch) => {
-//   try {
-//     const res = await axios.put(
-//       `${API_COMMENT}/${commentId}`,
-//       { description: newDescription },
-//       getAuthConfig()
-//     );
-//     dispatch(updateCommentSuccess(res.data.comment));
-//   } catch (err) {
-//     console.error("❌ Lỗi cập nhật comment:", err);
-//   }
-// };
+
 export const updateComment = (commentId, data) => async (dispatch) => {
   try {
     const res = await axios.put(
@@ -76,7 +64,7 @@ export const updateComment = (commentId, data) => async (dispatch) => {
   }
 };
 
-// 📌 Xóa bình luận (chỉ chủ sở hữu)
+// Xóa bình luận (chỉ chủ sở hữu)
 export const deleteComment = (commentId) => async (dispatch) => {
   try {
     await axios.delete(`${API_COMMENT}/${commentId}`, getAuthConfig());

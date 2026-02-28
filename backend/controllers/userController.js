@@ -142,7 +142,7 @@ exports.changePassword = async (req, res) => {
 exports.getAllUsers = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 20;
+    const limit = parseInt(req.query.limit) || 20;v
     const skip = (page - 1) * limit;
 
     const role = req.query.role || "";

@@ -7,14 +7,15 @@ router.post('/',verifyToken,verifyRole(['admin', 'employee']), uploadBookImage, 
 router.put('/:id',verifyToken,verifyRole(['admin', 'employee']), uploadBookImage, bookdetailsController.updateBookDetail);
 router.get("/search", bookdetailsController.searchBooks);
 router.post("/buynow", bookdetailsController.buyNowCheckout);
-router.get('/', bookdetailsController.getAllBookDetails);
-router.get('/latest', bookdetailsController.getLatestBooks);
-router.get('/random', bookdetailsController.getRandomBooks);
+router.get('/latest', bookdetailsController.getLatestBooks);    
 router.get('/:id', bookdetailsController.getBookDetailById);
 router.get('/related/:id/:slug', bookdetailsController.getRelatedBooks);
-router.get("/publisher/:id/:slug", bookdetailsController.getAllBooksByPublisher);
 router.get('/category/:id/:slug', bookdetailsController.getBooksByCategory);
 router.get('/:id/:slug', bookdetailsController.getBookDetail);
 router.delete("/:id",verifyToken, verifyRole(['admin']), bookdetailsController.deleteBookDetail);
+
+router.get('/random', bookdetailsController.getRandomBooks);
+router.get('/', bookdetailsController.getAllBookDetails);
 router.get('/all/:id/:slug', bookdetailsController.getAllBooksByCategory);
+router.get("/publisher/:id/:slug", bookdetailsController.getAllBooksByPublisher);
 module.exports = router;
