@@ -17,7 +17,7 @@ export const FormUserInformation = () => {
     birthday: "",
   });
 
-  // ✅ Cập nhật formData mỗi khi currentUser thay đổi
+
   useEffect(() => {
     if (currentUser) {
       setFormData({

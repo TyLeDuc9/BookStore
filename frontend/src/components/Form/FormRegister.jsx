@@ -5,7 +5,7 @@ import useTogglePassword from '../../hooks/useTogglePassword';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../redux/Auth/authApi';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 export const FormRegister = () => {
   const { showPassword, togglePassword } = useTogglePassword();
   const dispatch = useDispatch();
