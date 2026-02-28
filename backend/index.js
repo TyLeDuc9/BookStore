@@ -34,8 +34,18 @@ mongoose.connect(process.env.MONGODB_URL, {
 })
   .then(() => console.log('Connected MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
-
-app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+  res.setHeader("Cross-Origin-Embedder-Policy", "unsafe-none");
+  next();
+});
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://bookstore-1-3bb1.onrender.com"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 
