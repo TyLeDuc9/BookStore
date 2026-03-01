@@ -1,7 +1,9 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -18,6 +20,7 @@ module.exports = async function sendMail({ to, subject, html }) {
     });
     console.log(`✅ Email đã gửi tới ${to}`);
   } catch (err) {
-    console.error("❌ Lỗi gửi mail:", err.message);
+    console.error("❌ Lỗi gửi mail:", err);
+    throw err;
   }
 };
