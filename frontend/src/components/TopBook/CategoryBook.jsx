@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useCategoryBook } from '../../hooks/useCategoryBook';
-import { sliderSettings } from '../../utils/sliderSettings';
-import Slider from 'react-slick';
 import { BookCard } from '../BookCard/BookCard';
 import { ViewAll } from '../ViewAll/ViewAll';
+import { ItemSlider } from "../Slider/ItemSlider";
 import { useLoading } from '../../context/LoadingContext';
 import { ComponentLoading } from "../../components/Loading/ComponentLoading";
 export const CategoryBook = ({ id, slug }) => {
@@ -20,13 +19,13 @@ export const CategoryBook = ({ id, slug }) => {
     <div className="w-[89%] mx-auto lg:my-8 my-4">
       <ViewAll id={id} slug={slug} />
 
-      <Slider {...sliderSettings}>
-        {categoryBook.map((item) => (
-          <div key={item.id}>
-            <BookCard book={item} />
-          </div>
-        ))}
-      </Slider>
+      <ItemSlider
+        data={categoryBook}
+        getKey={(item) => item._id}
+        renderItem={(item) => <BookCard book={item} />}
+      />
+
+
     </div>
   );
 };

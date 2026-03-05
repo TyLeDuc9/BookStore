@@ -23,7 +23,7 @@ export const OrderDetail = () => {
     second: "2-digit",
   });
   return (
-    <div>
+    <div className="min-h-screen">
       {/* Banner */}
       <BannerPages />
 
