@@ -52,7 +52,7 @@ export const HeaderIcons = () => {
           className="lg:mx-6 lg:text-xl sm:text-xl text-lg cursor-pointer"
           onClick={() => setIsCartOpen(!isCartOpen)}
         />
-        {/* Badge luôn hiển thị, kể cả 0 */}
+
         <span
           className='absolute lg:left-10 left-3 -top-2 lg:-top-3 text-xs font-semibold bg-[#639eae]
             text-white lg:w-5 w-4 h-4 lg:h-5 flex items-center justify-center rounded-full'

@@ -1,81 +1,71 @@
-📚 BookNest – MERN Stack Project
+📚 BookNest – MERN Stack Bookstore
+BookNest là một website bán sách và đọc sách online được xây dựng bằng MERN Stack (MongoDB, Express.js, React.js, Node.js).
 
-BookNest là một dự án website bán sách / đọc sách online được xây dựng theo kiến trúc MERN Stack, bao gồm các chức năng: xem chi tiết sách, tìm kiếm, giỏ hàng (nếu bạn thêm), lưu sách yêu thích, đăng nhập, cập nhật thông tin người dùng,…
+Dự án mô phỏng một hệ thống E-commerce thực tế, cho phép người dùng tìm kiếm sách, xem chi tiết, mua sách, lưu sách yêu thích, đánh giá và bình luận, đồng thời cung cấp trang quản trị dành cho Admin và Employee để quản lý sản phẩm, đơn hàng và người dùng.
 
-📩 Liên hệ
-Gmail: ducty9963@gmail.com
-Facebook: https://www.facebook.com/eucyldt/
-
-🚀 Công nghệ sử dụng
-
-### 🔹 Frontend
-
-- React.js
-- Redux Toolkit
-- Axios
-- React Router
-- TailwindCSS
-
-### 🔹 Backend
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT – xác thực người dùng
-- bcryptjs – mã hóa mật khẩu
-
-## 🎯 Chức năng chính
-
-- Đăng ký, đăng nhập bằng JWT, đổi mật khẩu, lấy lại mật khẩu
-- Xem, thêm sản phẩm giỏ hàng, mua hàng, thanh toán
-- Tìm kiếm sách, loc theo giá, danh mục thể loại, nhà xuất bản
-- Thêm sách vào danh sách yêu thích, đánh giá, bình luận
-- Cập nhật thông tin cá nhân
-
-
-## 📥 Cài đặt dự án
-
-### 🔹 1. Clone dự án
-
-```bash
-git clone https://github.com/TyLeDuc9/BookStore.git
-cd BookStore
-
-⚙ Backend Setup
-cd backend
-npm install
-
-🔹 Tạo file .env
-MONGO_URL=mongodb://localhost:27017/yourdb
-JWT_SECRET=your_secret_key
-CLOUDINARY_CLOUD_NAME=your_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_secret_key
-GOOGLE_CLIENT_ID=your_client_id
-GOOGLE_SECRET=your_secret_key
-EMAIL_USER=your_email
-EMAIL_PASS=your_pass
-CLIENT_URL=your_url_web
-VNP_TMNCODE=your_vnpay_code
-VNP_HASH_SECRET=your_secret_key
-
-🔹 Chạy Backend
-npm start
-
-💻 Frontend Setup
-🔹 Cài đặt thư viện
-cd frontend
-npm install
-
-🔹 Tạo file .env
-
-VITE_GOOGLE_CLIENT_ID=your_key
-
-🔹 Chạy Frontend
-npm run dev
-
-🌐 Truy cập website
+🌐 Demo Website
 
 👉 https://bookstore-1-3bb1.onrender.com
-```
+
+🚀 Công nghệ sử dụng
+🔹 Frontend
+
+- React.js – xây dựng giao diện người dùng
+- Redux Toolkit – quản lý state toàn cục
+- Axios – gọi API từ backend
+- React Router – điều hướng trang
+- TailwindCSS – thiết kế giao diện responsive
+- React Icons – sử dụng icon UI
+
+🔹 Backend
+- Node.js
+- Express.js – xây dựng RESTful API
+- MongoDB – cơ sở dữ liệu NoSQL
+- Mongoose – ORM cho MongoDB
+- JWT (JSON Web Token) – xác thực người dùng
+- bcryptjs – mã hóa mật khẩu
+- Cloudinary – upload và lưu trữ hình ảnh
+- Nodemailer – gửi email reset mật khẩu
+- VNPay Payment Gateway – thanh toán online
+- Google OAuth – đăng nhập bằng Google
+
+🎯 Chức năng chính
+👤 Người dùng (User)
+- Đăng ký tài khoản
+- Đăng nhập bằng JWT Authentication
+- Đăng nhập bằng Google OAuth
+- Cập nhật thông tin cá nhân
+- Đổi mật khẩu
+- Quên mật khẩu và đặt lại mật khẩu qua email
+- Xem danh sách sách
+- Xem chi tiết sách
+- Tìm kiếm sách theo tên
+- Lọc sách theo:
+- Giá
+- Danh mục
+- Nhà xuất bản
+- Thêm sách vào giỏ hàng
+- Đặt hàng và thanh toán
+- Thêm sách vào danh sách yêu thích
+- Đánh giá và bình luận sách
+
+🛒 Hệ thống đơn hàng
+- Quản lý giỏ hàng
+- Tạo đơn hàng
+- Thanh toán online (VNPay)
+- Theo dõi trạng thái đơn hàng
+- Lưu địa chỉ giao hàng
+
+🛠 Admin / Employee Dashboard
+- Quản lý sách
+- Quản lý danh mục
+- Quản lý nhà xuất bản
+- Quản lý đơn hàng
+- Quản lý người dùng
+- Phân quyền Admin / Employee / User
+
+🔹Tài khoản demo
+Admin: Admin@gmail.com | password:123456
+Employee: minh@gmail.com | password:123456
+- Khi đăng nhập có quyền admin hoặc employee ở phần đầu trang sẽ hiển thị dashboard. Khi click vào sẽ điều hướng
+đến trang quản lý và phân quyền tương thích.

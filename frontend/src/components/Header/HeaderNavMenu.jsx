@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/Auth/authSlice";
 import { clearCartOnLogout } from "../../redux/Cart/cartSlice";
 import { clearAddresses } from "../../redux/ShippingAddress/shippingAddressSlice";
+import { AiFillMedicineBox } from "react-icons/ai";
 
 export const HeaderNavMenu = ({ mobile = false }) => {
   const dispatch = useDispatch();
@@ -38,16 +39,14 @@ export const HeaderNavMenu = ({ mobile = false }) => {
 
   return (
     <ul
-      className={`w-full ${
-        mobile ? "flex flex-col gap-4" : "flex items-center gap-4"
-      }`}
+      className={`w-full ${mobile ? "flex flex-col gap-4" : "flex items-center gap-4"
+        }`}
     >
       {navItems.map((item, index) => (
         <li
           key={index}
-          className={`relative ${
-            mobile ? "" : "group"
-          } lg:text-base text-sm font-semibold`}
+          className={`relative ${mobile ? "" : "group"
+            } lg:text-base text-sm font-semibold`}
         >
           {/* TEXT & CLICK HANDLER */}
           {item.dropdown ? (
@@ -114,8 +113,18 @@ export const HeaderNavMenu = ({ mobile = false }) => {
               <FaUser /> {currentUser?.name}
             </Link>
           </li>
+          {(currentUser?.role === "admin" || currentUser?.role === "employee") && (
+            <li className="lg:text-base text-sm font-semibold">
+              <Link
+                to={currentUser?.role === "admin" ? "/admin" : "/employee"}
+                className="flex items-center lg:gap-2 gap-1 px-4 hover:text-[#639eae]"
+              >
+                Dashboard
+              </Link>
+            </li>
+          )}
 
-          <li 
+          <li
             className="px-4 flex items-center text-sm font-semibold lg:text-base gap-2 hover:text-[#639eae] cursor-pointer"
             onClick={handleLogout}
           >
